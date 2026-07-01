@@ -1,0 +1,56 @@
+[project]
+name = "envsentry"
+version = "0.1.0"
+description = "Low-false-positive, context-aware secret scanner and git pre-commit guard. Two-tier VERIFIED/POSSIBLE confidence, context suppressors, hashed baseline. Fully offline, zero network, stdlib core."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Dhanush Shankar" }]
+keywords = ["secrets", "secret-scanning", "pre-commit", "git-hook", "security",
+            "sast", "false-positive", "entropy", "credentials", "devsecops"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Security",
+    "Environment :: Console",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "typer>=0.12",
+    "rich>=13.7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+
+[project.scripts]
+envsentry = "envsentry.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/Danush-Aries/envsentry"
+Repository = "https://github.com/Danush-Aries/envsentry"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/envsentry"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B"]
+# E501: long lines are fine (line-length is a soft target for regex/help strings).
+# B008: typer *requires* Option()/Argument() calls in parameter defaults.
+ignore = ["E501", "B008"]

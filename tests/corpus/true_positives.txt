@@ -1,0 +1,10 @@
+# Fake-but-format-valid keys. Every one of these MUST fire as VERIFIED when
+# scanned in a non-allowlisted path. Guards recall so we don't under-detect.
+
+aws_access_key = "AKIAIOSFODNN7EXAMPLE"
+github_token = "ghp_A1b2C3d4E5f6G7h8J9k0L1m2N3o4P5q6R7s8"
+slack_bot = "xoxb-A1b2C3d4E5-F6g7H8j9K0-LmNoPqRsTuVw"
+stripe_live = "sk_live_{SPLIT}A1b2C3d4E5f6G7h8J9k0L1m2"
+google_maps = "AIzaSy1aBcD2eFgH3iJkL4mNoP5qRsT6uVwX7yZ"
+jwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhYmMiLCJuYW1lIjoiSm9obiBEb2UifQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+-----BEGIN OPENSSH PRIVATE KEY-----
