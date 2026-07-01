@@ -1,0 +1,24 @@
+# Real-world false-positive triggers. Scanned in a NON-allowlisted path, this
+# file must yield ZERO blocking (VERIFIED, active) findings — the headline metric.
+
+# --- structural (git SHA / SHA-256 / UUID) ---
+session_id = "550e8400-e29b-41d4-a716-446655440000"
+commit_sha = "9c8b7a6d5e4f3c2b1a0f9e8d7c6b5a4d3e2f1a0b"
+parent_sha = "9c8b7a6"
+content_digest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+
+# --- placeholder tokens (real provider FORMAT, fake content) ---
+AWS_ACCESS_KEY = "AKIA0000000000000000"
+STRIPE_SECRET = "sk_live_{SPLIT}xxxxxxxxxxxxxxxxxxxxxxxx"
+PASSWORD = "changeme"
+API_TOKEN = "<your-api-key-here>"
+
+# --- example-variable context (real Google key format) ---
+EXAMPLE_API_KEY = "AIzaSy1aBcD2eFgH3iJkL4mNoP5qRsT6uVwX7yZ"
+SAMPLE_TOKEN = "ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# --- lockfile integrity hash (high entropy, but only POSSIBLE, never blocks) ---
+"integrity": "sha512-Q9d0aB3xY7pL2mN8vC4wZ1kR6tE5uI0oP3sD7fG9hJ2lK4nM6bV8cX1zA5yW7qT"
+
+# --- prose of comparable length never fires the entropy detector (words tokenize short) ---
+this configuration file documents the expected environment variables for local use
