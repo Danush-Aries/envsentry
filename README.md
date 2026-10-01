@@ -53,9 +53,9 @@ so the low-false-positive property cannot silently regress.
 ## Install
 
 ```bash
-pipx install envsentry        # recommended
-# or
-pip install envsentry
+pipx install git+https://github.com/Danush-Aries/envsentry   # recommended (not on PyPI yet)
+# or, from a clone
+pip install -e .
 ```
 
 Runtime dependency is `typer` only (`rich` for optional color); everything else —
